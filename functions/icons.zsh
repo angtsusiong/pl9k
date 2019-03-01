@@ -319,11 +319,11 @@ case $POWERLEVEL9K_MODE in
     # Set the right locale to protect special characters
     local LC_ALL="" LC_CTYPE="en_US.UTF-8"
     icons=(
-      LEFT_SEGMENT_SEPARATOR         $'\uE0B0'              # 
-      RIGHT_SEGMENT_SEPARATOR        $'\uE0B2'              # 
+      LEFT_SEGMENT_SEPARATOR         $'\uE0C6'              # 
+      RIGHT_SEGMENT_SEPARATOR        $'\uE0C7'              # 
       LEFT_SEGMENT_END_SEPARATOR     ' '                    # Whitespace
-      LEFT_SUBSEGMENT_SEPARATOR      $'\uE0B1'              # 
-      RIGHT_SUBSEGMENT_SEPARATOR     $'\uE0B3'              # 
+      LEFT_SUBSEGMENT_SEPARATOR      $'\uE0C4'              # 
+      RIGHT_SUBSEGMENT_SEPARATOR     $'\uE0C5'              # 
       CARRIAGE_RETURN_ICON           $'\u21B5'              # ↵
       ROOT_ICON                      $'\uE614 '             # 
       SUDO_ICON                      $'\uF09C'              # 
