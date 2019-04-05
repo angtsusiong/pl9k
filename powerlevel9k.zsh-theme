@@ -1198,7 +1198,7 @@ prompt_node_version() {
   local node_version=$(node -v 2>/dev/null)
   [[ -z "${node_version}" ]] && return
 
-  "$1_prompt_segment" "$0" "$2" "green" "white" "${node_version:1}" 'NODE_ICON'
+  "$1_prompt_segment" "$0" "$2" "green" "$DEFAULT_COLOR" "${node_version:1}" 'NODE_ICON'
 }
 
 ################################################################
