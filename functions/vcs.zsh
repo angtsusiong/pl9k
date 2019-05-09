@@ -57,7 +57,29 @@ function +vi-git-remotebranch() {
      if [ ${#hook_com[branch]} -gt ${POWERLEVEL9K_VCS_SHORTEN_MIN_LENGTH} ] && [ ${#hook_com[branch]} -gt ${POWERLEVEL9K_VCS_SHORTEN_LENGTH} ]; then
        case "$POWERLEVEL9K_VCS_SHORTEN_STRATEGY" in
          truncate_middle)
-           hook_com[branch]="${branch_name:0:$POWERLEVEL9K_VCS_SHORTEN_LENGTH}${POWERLEVEL9K_VCS_SHORTEN_DELIMITER}${branch_name: -$POWERLEVEL9K_VCS_SHORTEN_LENGTH}"
+             case "${branch_name:0:6}" in
+               featur)
+                   hook_com[branch]="fetu/${branch_name:8:$POWERLEVEL9K_VCS_SHORTEN_LENGTH}${POWERLEVEL9K_VCS_SHORTEN_DELIMITER}${branch_name: -$POWERLEVEL9K_VCS_SHORTEN_LENGTH}"
+               ;;
+               releas)
+                   hook_com[branch]="rel/${branch_name:8:$POWERLEVEL9K_VCS_SHORTEN_LENGTH}${POWERLEVEL9K_VCS_SHORTEN_DELIMITER}${branch_name: -$POWERLEVEL9K_VCS_SHORTEN_LENGTH}"
+               ;;
+               suppor)
+                   hook_com[branch]="sup/${branch_name:8:$POWERLEVEL9K_VCS_SHORTEN_LENGTH}${POWERLEVEL9K_VCS_SHORTEN_DELIMITER}${branch_name: -$POWERLEVEL9K_VCS_SHORTEN_LENGTH}"
+               ;;
+               bugfix)
+                   hook_com[branch]="bugf/${branch_name:7:$POWERLEVEL9K_VCS_SHORTEN_LENGTH}${POWERLEVEL9K_VCS_SHORTEN_DELIMITER}${branch_name: -$POWERLEVEL9K_VCS_SHORTEN_LENGTH}"
+               ;;
+               hotfix)
+                   hook_com[branch]="hotf/${branch_name:7:$POWERLEVEL9K_VCS_SHORTEN_LENGTH}${POWERLEVEL9K_VCS_SHORTEN_DELIMITER}${branch_name: -$POWERLEVEL9K_VCS_SHORTEN_LENGTH}"
+               ;;
+               develo)
+                   hook_com[branch]="dev"
+               ;;
+               master)
+                   hook_com[branch]="mst"
+               ;;
+             esac
          ;;
          truncate_from_right)
            hook_com[branch]="${branch_name:0:$POWERLEVEL9K_VCS_SHORTEN_LENGTH}${POWERLEVEL9K_VCS_SHORTEN_DELIMITER}"
